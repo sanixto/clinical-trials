@@ -9,6 +9,7 @@ export interface IApplication extends Document {
   lastName: string;
   phoneNumber: string;
   email: string;
+  applicationMessage: string;
   privacyPolicy: boolean;
   recieveEmail?: boolean;
   createdAt: Date;
@@ -25,6 +26,7 @@ const applicationSchema = new Schema<IApplication>(
     lastName: { type: String, required: true, trim: true, maxlength: 50 },
     phoneNumber: { type: String, required: true, trim: true },
     email: { type: String, required: true, trim: true, lowercase: true },
+    applicationMessage: { type: String, required: true, trim: true },
     privacyPolicy: { type: Boolean, required: true },
     recieveEmail: { type: Boolean, default: false },
   },

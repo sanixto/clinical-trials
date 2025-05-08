@@ -50,7 +50,7 @@ export default function ApplicationForm({
   });
 
   const onSubmit = async (data: z.infer<typeof applicationSchema>) => {
-    await apiPost("/api/apply", data);
+    await apiPost("/api/apply", { ...data, applicationMessage });
   };
 
   const age = useWatch({ control, name: "age" });
