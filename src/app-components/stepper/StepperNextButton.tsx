@@ -13,7 +13,7 @@ export function StepperNextButton({ maxSteps }: StepperNextButtonProps) {
 
   return (
     <Button
-      className="px-20"
+      className="w-full lg:w-fit px-20"
       variant="primary"
       type={isLastStep ? "submit" : "button"}
       onClick={!isLastStep ? next : undefined}

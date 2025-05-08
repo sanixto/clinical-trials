@@ -6,7 +6,7 @@ export function StepperPrevButton() {
 
   return (
     <Button
-      className="px-20"
+      className="w-full lg:w-fit px-20"
       variant="outline"
       disabled={activeStep === 0}
       onClick={prev}

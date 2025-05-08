@@ -62,6 +62,7 @@ export default function ApplicationForm({
   const lastName = useWatch({ control, name: "lastName" });
   const phoneNumber = useWatch({ control, name: "phoneNumber" });
   const email = useWatch({ control, name: "email" });
+  const privacyPolicy = useWatch({ control, name: "privacyPolicy" });
 
   const applicationMessage = useMemo(
     () =>
@@ -87,7 +88,7 @@ export default function ApplicationForm({
                 !age || !zip || !!errors?.age?.message || !!errors?.zip?.message
               }
             >
-              <div className="flex gap-5">
+              <div className="flex flex-wrap lg:flex-nowrap gap-5">
                 <Input
                   {...register("age")}
                   label="Age"
@@ -123,7 +124,7 @@ export default function ApplicationForm({
                 />
               ))}
               {errors?.conditions?.message && (
-                <p className="text-red-500 font-medium text-xl">
+                <p className="text-red-500 font-medium text-lg lg:text-xl">
                   {errors?.conditions?.message}
                 </p>
               )}
@@ -135,7 +136,7 @@ export default function ApplicationForm({
             >
               {locations.map((location) => (
                 <div
-                  className="rounded-4xl p-10 flex flex-col gap-5 bg-green-50"
+                  className="rounded-4xl p-5 lg:p-10 flex flex-col gap-5 bg-green-50"
                   key={location}
                 >
                   <Radio
@@ -145,13 +146,13 @@ export default function ApplicationForm({
                     value={location}
                     {...register("location")}
                   />
-                  <span className="p-4 w-fit rounded-4xl text-2xl  border-2 bg-green-600 text-white font-semibold">
+                  <span className="p-2 lg:p-4 w-fit rounded-4xl text-lg lg:text-2xl border-2 bg-green-600 text-white font-semibold">
                     {status.split("_").join(" ")}
                   </span>
                 </div>
               ))}
               {errors?.location?.message && (
-                <p className="text-red-500 font-medium text-xl">
+                <p className="text-red-500 font-medium text-lg lg:text-xl">
                   {errors?.location?.message}
                 </p>
               )}
@@ -174,7 +175,7 @@ export default function ApplicationForm({
                 />
               ))}
               {errors?.criterias?.message && (
-                <p className="text-red-500 font-medium text-xl">
+                <p className="text-red-500 font-medium text-lg lg:text-xl">
                   {errors?.criterias?.message}
                 </p>
               )}
@@ -187,13 +188,14 @@ export default function ApplicationForm({
                 !lastName ||
                 !phoneNumber ||
                 !email ||
+                privacyPolicy !== "true" ||
                 !!errors.firstName?.message ||
                 !!errors.lastName?.message ||
                 !!errors.phoneNumber?.message ||
                 !!errors.email?.message
               }
             >
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                 <Input
                   label="First name"
                   placeholder="Enter your first name"
@@ -219,12 +221,12 @@ export default function ApplicationForm({
                   {...register("email")}
                 ></Input>
               </div>
-              <p className="text-3xl font-medium text-gray-600">
+              <p className="text-xl lg:text-3xl font-medium text-gray-600">
                 This email will go to the researcher—you may edit it or send
                 as-is before &apos;Submit&apos;
               </p>
               <textarea
-                className="w-full text-black h-88 text-3xl bg-green-50 rouded-xl p-10"
+                className="w-full text-black h-88 text-xl lg:text-3xl bg-green-50 rouded-xl p-5 lg:p-10"
                 readOnly
                 placeholder={applicationMessage}
               />
@@ -235,7 +237,7 @@ export default function ApplicationForm({
                 {...register("privacyPolicy")}
               />
               {errors?.privacyPolicy?.message && (
-                <p className="text-red-500 font-medium text-xl">
+                <p className="text-red-500 font-medium text-lg lg:text-xl">
                   {errors?.privacyPolicy?.message}
                 </p>
               )}

@@ -28,7 +28,7 @@ const AccordionTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadixAccordionTrigger>
 >(({ children, ...props }, forwardedRef) => (
   <RadixAccordionTrigger
-    className="w-full font-semibold hover:cursor-pointer group flex py-8 flex-1 cursor-default items-center gap-5 leading-none text-green-600 text-3xl outline-none "
+    className="w-full font-semibold hover:cursor-pointer group flex py-8 flex-1 cursor-default items-center gap-5 leading-none text-green-600 text-xl lg:text-3xl outline-none "
     {...props}
     ref={forwardedRef}
   >

@@ -6,7 +6,7 @@ interface RadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export function Radio({ label, id, className, ...props }: RadioProps) {
   return (
-    <div className={`flex gap-5 text-3xl flex-row ${className}`}>
+    <div className={`flex gap-5 text-xl lg:text-3xl flex-row ${className}`}>
       <input
         id={id}
         className="border-2 p-4 rounded-xl border-gray-300 text-gray-500 w-8"

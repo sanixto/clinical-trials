@@ -11,11 +11,11 @@ export default async function Home({ searchParams }: HomePageProps) {
   const studies = await getStudies(city, state, condition, age, afhv);
 
   return (
-    <main className="p-10 flex bg-green-50 gap-10">
-      <div className="flex-1 h-fit bg-white border-2 border-green-200 rounded-xl">
+    <main className="p-5 lg:p-10 lg:flex bg-green-50 gap-10">
+      <div className="lg:flex-2 w-full h-fit bg-white border-2 border-green-200 rounded-xl">
         <Filter />
       </div>
-      <div className="flex-3 grid grid-cols-2 gap-10">
+      <div className="lg:flex-5 grid grid-cols-1 2xl:grid-cols-2 gap-10">
         {studies.map((study) => {
           const {
             statusModule,

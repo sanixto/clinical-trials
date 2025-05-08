@@ -22,7 +22,7 @@ export default function Button({
 
   return (
     <button
-      className={`rounded-xl text-3xl font-semibold py-3 px-6 hover:cursor-pointer disabled:opacity-50 ${variantClass} ${
+      className={`rounded-xl text-xl lg:text-3xl font-semibold lg:py-3 py-2 px-4 lg:px-6 hover:cursor-pointer disabled:opacity-50 ${variantClass} ${
         className ?? ""
       }`}
       type="button"

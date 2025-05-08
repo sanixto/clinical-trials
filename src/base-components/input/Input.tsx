@@ -13,7 +13,9 @@ export function Input({
   ...props
 }: InputProps) {
   return (
-    <div className={`flex gap-5 text-3xl flex-col ${className}`}>
+    <div
+      className={`w-full flex gap-3 xl:gap-5 text-xl xl:text-3xl flex-col ${className}`}
+    >
       {label && (
         <label className="w-full text-gray-600 font-medium" htmlFor={id}>
           {label}
@@ -21,7 +23,7 @@ export function Input({
       )}
       <input
         id={id}
-        className="border-2 p-4 rounded-xl border-gray-300 text-gray-500 w-full"
+        className="border-2 p-3 xl:p-4 rounded-xl border-gray-300 text-gray-500 w-full"
         type="text"
         {...props}
       />

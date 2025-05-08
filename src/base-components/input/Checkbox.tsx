@@ -6,10 +6,10 @@ interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export function Checkbox({ label, id, className, ...props }: CheckboxProps) {
   return (
-    <div className={`flex gap-5 text-3xl flex-row ${className}`}>
+    <div className={`flex gap-5 text-xl xl:text-3xl flex-row ${className}`}>
       <input
         id={id}
-        className="border-2 p-4 rounded-xl border-gray-300 text-gray-500 w-8"
+        className="border-2 p-4 rounded-xl border-gray-300 text-gray-500 w-6 xl:w-8"
         type="checkbox"
         value={"true"}
         {...props}

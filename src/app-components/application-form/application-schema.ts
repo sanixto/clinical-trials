@@ -20,11 +20,8 @@ export function createApllicationSchema({
       message: "ZIP code must be in 12345 or 12345-6789 format",
     }),
     conditions: z
-      .union([z.string(), z.array(z.string())])
-      .transform((val) => (typeof val === "string" ? [val] : val))
-      .refine((arr) => arr.length > 0, {
-        message: "At least one condition must be selected",
-      }),
+      .array(z.string())
+      .nonempty({ message: "At least one condition must be selected" }),
     location: z.string().min(1, "Location must be selected"),
     criterias: z
       .array(z.string())

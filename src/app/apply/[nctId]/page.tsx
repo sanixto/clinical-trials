@@ -31,11 +31,11 @@ export default async function ApplyPage({ params }: ApplyPageProps) {
   };
 
   return (
-    <main className="p-28 bg-green-50 flex flex-col gap-10">
-      <h2 className="text-4xl text-center font-semibold">
+    <main className="p-5 lg:px-28 lg:py-14 bg-green-50 flex flex-col gap-5 lg:gap-10">
+      <h2 className="text-2xl lg:text-4xl text-center font-semibold">
         {identificationModule.briefTitle}
       </h2>
-      <div className="bg-white p-10 w-full rounded-xl">
+      <div className="bg-white p-5 lg:p-10 w-full rounded-xl">
         <ApplicationForm
           nctId={nctId}
           conditions={conditionsModule.conditions}

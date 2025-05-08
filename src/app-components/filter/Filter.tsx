@@ -6,7 +6,9 @@ import { Checkbox } from "@/base-components/input/Checkbox";
 export default function Filter() {
   return (
     <div className="w-full p-10">
-      <h2 className="text-green-600 text-5xl font-semibold pb-10">Filters</h2>
+      <h2 className="text-green-600 text-3xl xl:ext-5xl font-semibold pb-5 xl:pb-10">
+        Filters
+      </h2>
       <Form action="">
         <div className="flex flex-col gap-5">
           <Input name="city" label="City" placeholder="Enter your city" />
@@ -28,7 +30,7 @@ export default function Filter() {
             label="Allowed for healthy volunteers"
             type="checkbox"
           />
-          <Button variant="primary" type="submit" className="py-4">
+          <Button variant="primary" type="submit" className="xl:py-4">
             Search
           </Button>
         </div>

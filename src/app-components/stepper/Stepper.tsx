@@ -14,7 +14,7 @@ export function Stepper({ children }: StepperProps) {
       <div className="w-full flex flex-col gap-10">
         <StepperLine maxSteps={children.length} />
         <StepperContent>{children}</StepperContent>
-        <div className="flex w-full justify-end gap-2">
+        <div className="flex w-full flex-wrap lg:flex-nowrap lg:justify-end gap-2">
           <StepperPrevButton />
           <StepperNextButton maxSteps={children.length} />
         </div>
