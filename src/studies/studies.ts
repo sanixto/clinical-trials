@@ -96,23 +96,16 @@ export function getUniqueLocationStrings(
 }
 
 export function extractAllCriteria(text: string): string[] {
-  const [inclusionBlock, exclusionBlock] = text
-    .split(/Exclusion Criteria:/i)
-    .map((part) => part.trim());
+  if (!text) return [];
 
-  const inclusionText = inclusionBlock
-    .replace(/^Inclusion Criteria:/i, "")
-    .trim();
-
-  const inclusion = inclusionText
-    .split(/\n\* ?/)
-    .map((s) => s.trim())
-    .filter(Boolean);
-
-  const exclusion = exclusionBlock
-    .split(/\n\d+\.\s?/)
-    .map((s) => s.trim())
-    .filter(Boolean);
-
-  return [...inclusion, ...exclusion];
+  return text
+    .split(/\r?\n/)
+    .map((line) => {
+      const m = line.match(/^\s*(?:\*|-|\d+\.)\s*(.+)$/);
+      return m ? m[1].trim() : null;
+    })
+    .filter(
+      (item): item is string =>
+        Boolean(item) && item?.toLowerCase() !== "not specified"
+    );
 }
