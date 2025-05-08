@@ -19,7 +19,6 @@ export function StepperNextButton({ maxSteps }: StepperNextButtonProps) {
       onClick={!isLastStep ? next : undefined}
       disabled={disabled}
     >
-      {String(isLastStep ? "submit" : "button")}
       {isLastStep ? (pending ? `Applying...` : "Apply") : "Next"}
     </Button>
   );
